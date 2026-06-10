@@ -3,59 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portal de Notícias</title>
+    <title>GlobalTech - Notícias e Ciências</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Cabeçalho -->
-    <header class="header">
-        <h1>Hora da Notícia</h1>
-        <nav class="nav">
-            <a href="#">Brasil</a>
-            <a href="#">Mundo</a>
+    <header>
+        <div class="logo">GlobalTech Blog</div>
+        <nav>
+            <a href="#">Início</a>
+            <a href="#">Ciência</a>
             <a href="#">Tecnologia</a>
-            <a href="#">Esportes</a>
+            <a href="#">Mundo</a>
         </nav>
     </header>
 
-    <!-- Conteúdo Principal -->
-    <main class="container">
+    <div class="container">
         
-        <!-- Notícia Principal -->
-         <a href="https://www.bbc.com/portuguese" target="_blank"></a>
-        <section class="main-news">
-            <div class="news-image placeholder">Imagem Principal</div>
-            <div class="news-content">
-                <span class="category">Tecnologia</span>
-                <h2>Nova Inteligência Artificial revoluciona o mercado de trabalho</h2>
-                <p>Descubra como as novas ferramentas automatizadas estão mudando a rotina de milhares de profissionais pelo mundo.</p>
-            </div>
-        </section>
-
-        <!-- Notícias Secundárias -->
-        <aside class="sidebar">
-            <article class="sidebar-item">
-                <span class="category">Esportes</span>
-                <h3>Final do campeonato bate recorde de audiência</h3>
-            </article>
+        <main class="main-content">
             
-            <article class="sidebar-item">
-                <span class="category">Brasil</span>
-                <h3>Novas medidas econômicas prometem reduzir a inflação</h3>
+            <article class="post">
+                <span class="category tech">Tecnologia</span>
+                <h2>O Avanço da Inteligência Artificial em 2026</h2>
+                <span class="date">Postado hoje</span>
+                
+                <img src="https://picsum.photos/800/400" alt="Tecnologia" class="post-img">
+                
+                <p>A tecnologia está avançando a passos largos. Novas ferramentas estão mudando a forma como trabalhamos, estudamos e nos comunicamos globalmente.</p>
+                
+                <a href="https://www.tecmundo.com.br" target="_blank" class="read-more">Leia a notícia completa no TecMundo &rarr;</a>
             </article>
 
-            <article class="sidebar-item">
-                <span class="category">Mundo</span>
-                <h3>Cientistas descobrem novos vestígios de água em Marte</h3>
+            <article class="post">
+                <span class="category science">Ciência</span>
+                <h2>Exploração Espacial: Rumo a Marte</h2>
+                <span class="date">Postado ontem</span>
+                
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                
+                <p>A busca por vida e a colonização de outros planetas continua sendo o principal foco das agências espaciais neste século. Assista ao vídeo acima para entender os próximos passos da missão.</p>
             </article>
+
+        </main>
+
+        <aside class="sidebar">
+            <div class="sidebar-box">
+                <h3>Sobre o Blog</h3>
+                <p>Um espaço dedicado a compartilhar conhecimento sobre ciência, tecnologia e as principais informações do mundo moderno.</p>
+            </div>
+
+            <div class="sidebar-box">
+                <h3>Links Recomendados</h3>
+                <ul class="recommended-links">
+                    <li><a href="https://g1.globo.com/ciencia/" target="_blank">G1 Ciência</a></li>
+                    <li><a href="https://www.nature.com" target="_blank">Revista Nature (En)</a></li>
+                    <li><a href="https://techcrunch.com" target="_blank">TechCrunch (En)</a></li>
+                </ul>
+            </div>
         </aside>
 
-    </main>
+    </div>
 
-    <!-- Rodapé -->
-    <footer class="footer">
-        <p>&copy; 2026 Portal de Notícias. Todos os direitos reservados.</p>
+    <footer>
+        <p>&copy; 2026 GlobalTech Blog - Todos os direitos reservados.</p>
     </footer>
 
 </body>
