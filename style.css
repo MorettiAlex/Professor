@@ -100,21 +100,16 @@ header nav a:hover {
     margin-bottom: 15px;
 }
 
-.video-container {
-    position: relative;
-    padding-bottom: 56.25%; /* Proporção 16:9 */
-    height: 0;
-    margin-bottom: 15px;
-    border-radius: 6px;
-    overflow: hidden;
+.video-container{
+    display: flex;
+    justify-content: center;
+    margin: 20px;
 }
 
-.video-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+.video-container iframe{
+    width: 800px;
+    height: 450px;
+    border: none;
 }
 
 .post p {
