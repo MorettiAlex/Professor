@@ -147,7 +147,11 @@ iframe {
     background-color: #2ecc71;
 }
 
-/* Botão "Leia Mais" */
+.category.sports {
+    background-color: #06AA48; /* Cor oficial do GE */
+}
+
+/* Botões "Leia Mais" */
 .read-more {
     display: inline-block;
     background-color: #2c3e50;
@@ -161,6 +165,15 @@ iframe {
 .read-more:hover {
     background-color: #34495e;
     color: #ffffff;
+}
+
+/* Botão especial "Leia Mais" para Esportes/GE */
+.read-more.ge-link {
+    background-color: #06AA48;
+}
+
+.read-more.ge-link:hover {
+    background-color: #048236;
 }
 
 /* ==========================================================================
@@ -209,6 +222,16 @@ iframe {
     color: #3498db;
     padding-left: 5px; /* Efeito sutil ao passar o mouse */
     transition: all 0.2s ease;
+}
+
+/* Link de destaque do GE na Sidebar */
+.recommended-links li a.ge-sidebar {
+    color: #06AA48;
+    font-weight: bold;
+}
+
+.recommended-links li a.ge-sidebar:hover {
+    color: #048236;
 }
 
 /* ==========================================================================
