@@ -3,155 +3,764 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apresentações e Design no Canva | Portal Intelectus</title>
+    <title>Pensamento Intelectual & Produções Estudantis</title>
+    <!-- Fontes do Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+    
     <style>
+        /* ==========================================================================
+           1. ESTILOS GERAIS E VARIÁVEIS
+           ========================================================================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         :root {
-            --bg-main: #f8fafc;
-            --text-primary: #1e293b;
-            --text-secondary: #475569;
-            --accent: #0f766e;
-            --accent-hover: #115e59;
-            --accent-light: #ccfbf1;
-            --card-bg: #ffffff;
+            --bg-primary: #f8fafc;
+            --bg-card: #ffffff;
+            --text-dark: #0f172a;
+            --text-muted: #475569;
+            --accent-color: #b45309;
+            --accent-hover: #92400e;
+            --brand-dark: #1e293b;
             --border-color: #e2e8f0;
-            --nav-bg: #0f172a;
-            --canva-purple: #7d2ae8;
+            --canva-color: #00c4cc;
+            --canva-hover: #00a8b0;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+            --shadow-md: 0 4px 12px -2px rgba(0,0,0,0.08);
+            --shadow-lg: 0 12px 24px -4px rgba(0,0,0,0.12);
+            --radius: 12px;
         }
 
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: var(--bg-main); color: var(--text-primary); line-height: 1.7; }
-
-        header { background-color: var(--nav-bg); color: #ffffff; padding: 1rem 2rem; position: sticky; top: 0; z-index: 1000; }
-        .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
-        .logo { font-family: 'Merriweather', serif; font-size: 1.5rem; font-weight: 700; color: #ffffff; text-decoration: none; }
-        .logo span { color: #2dd4bf; }
-        nav ul { display: flex; list-style: none; gap: 1.5rem; flex-wrap: wrap; }
-        nav a { color: #cbd5e1; text-decoration: none; font-weight: 500; font-size: 0.95rem; }
-        nav a:hover, nav a.active { color: #2dd4bf; }
-
-        .banner { background-color: #1e293b; color: white; padding: 3rem 2rem; text-align: center; }
-        .banner h1 { font-family: 'Merriweather', serif; font-size: 2.2rem; margin-bottom: 0.5rem; }
-        .banner p { color: #94a3b8; max-width: 700px; margin: 0 auto; }
-
-        .container { max-width: 1200px; margin: 3rem auto; padding: 0 1.5rem; }
-
-        .featured-canva-card {
-            background-color: var(--card-bg);
-            border: 2px solid #e0e7ff;
-            border-radius: 12px;
-            padding: 2.5rem;
-            margin-bottom: 3rem;
-            box-shadow: 0 4px 16px rgba(125, 42, 232, 0.08);
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-dark);
+            line-height: 1.7;
+            padding-bottom: 60px;
         }
 
-        .badge-canva {
-            display: inline-block;
-            background-color: #f3e8ff;
-            color: var(--canva-purple);
-            font-weight: 700;
-            padding: 0.3rem 0.8rem;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            margin-bottom: 1rem;
+        /* ==========================================================================
+           2. CABEÇALHO / TÍTULO PRINCIPAL
+           ========================================================================== */
+        header {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #ffffff;
+            padding: 80px 20px 60px;
+            text-align: center;
+            border-bottom: 4px solid var(--accent-color);
         }
 
-        .featured-title {
-            font-family: 'Merriweather', serif;
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
+        .header-container {
+            max-width: 900px;
+            margin: 0 auto;
         }
 
-        .featured-desc {
-            color: var(--text-secondary);
-            font-size: 1.05rem;
-            margin-bottom: 2rem;
+        header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin-bottom: 18px;
+            letter-spacing: -0.5px;
+            color: #f8fafc;
+            line-height: 1.2;
         }
 
-        .canva-link-box {
-            background: linear-gradient(135deg, #7d2ae8 0%, #00c4cc 100%);
-            padding: 2rem;
-            border-radius: 10px;
-            color: white;
+        header p.subtitle {
+            font-size: 1.2rem;
+            color: #cbd5e1;
+            font-weight: 300;
+            max-width: 750px;
+            margin: 0 auto;
+        }
+
+        /* ==========================================================================
+           3. ESTRUTURA PRINCIPAL
+           ========================================================================== */
+        main {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            margin-top: 60px;
+        }
+
+        .section-header {
+            margin-bottom: 35px;
             text-align: center;
         }
 
-        .canva-link-box h3 {
-            font-size: 1.4rem;
-            margin-bottom: 0.8rem;
+        .section-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            color: var(--brand-dark);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 12px;
         }
 
-        .canva-link-box p {
-            margin-bottom: 1.5rem;
-            opacity: 0.95;
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 70px;
+            height: 4px;
+            background-color: var(--accent-color);
+            border-radius: 2px;
+        }
+
+        /* ==========================================================================
+           4. RESUMO: O QUE É SER INTELECTUAL?
+           ========================================================================== */
+        .intelectual-summary {
+            background-color: var(--bg-card);
+            padding: 40px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border-color);
+            margin-bottom: 50px;
+        }
+
+        .intelectual-summary p {
+            font-size: 1.08rem;
+            color: var(--text-muted);
+            margin-bottom: 18px;
+            text-align: justify;
+        }
+
+        .intelectual-summary p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* ==========================================================================
+           5. GALERIA DE GRANDES INTELECTUAIS
+           ========================================================================== */
+        .intelectuals-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .intelectual-card {
+            background: var(--bg-card);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+        }
+
+        .intelectual-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .intelectual-card img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .intelectual-card-body {
+            padding: 22px 18px;
+        }
+
+        .intelectual-card-body h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.35rem;
+            color: var(--brand-dark);
+            margin-bottom: 4px;
+        }
+
+        .intelectual-card-body span.role {
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: var(--accent-color);
+            letter-spacing: 0.5px;
+            display: block;
+            margin-bottom: 12px;
+        }
+
+        .intelectual-card-body p {
+            font-size: 0.92rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        /* ==========================================================================
+           6. PRODUÇÕES DOS ESTUDANTES (3 TÍTULOS MENORES)
+           ========================================================================== */
+        .student-section {
+            background: var(--bg-card);
+            border-radius: var(--radius);
+            padding: 38px;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border-color);
+            margin-bottom: 40px;
+        }
+
+        .student-section h3.sub-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.75rem;
+            color: var(--brand-dark);
+            margin-bottom: 12px;
+            border-left: 5px solid var(--accent-color);
+            padding-left: 15px;
+        }
+
+        .student-section p.sub-desc {
+            color: var(--text-muted);
+            font-size: 1.02rem;
+            margin-bottom: 25px;
+        }
+
+        /* CARDS DE TRABALHOS DOS ALUNOS */
+        .student-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .work-card {
+            background-color: var(--bg-primary);
+            padding: 22px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            transition: border-color 0.2s ease;
+        }
+
+        .work-card:hover {
+            border-color: var(--accent-color);
+        }
+
+        .work-card h4 {
+            font-size: 1.1rem;
+            color: var(--brand-dark);
+            margin-bottom: 8px;
+        }
+
+        .work-card p {
+            font-size: 0.94rem;
+            color: var(--text-muted);
+        }
+
+        /* EMBED CONTAINER DO CANVA */
+        .canva-wrapper {
+            position: relative;
+            width: 100%;
+            height: 0;
+            padding-top: 56.2500%; /* Proporção 16:9 */
+            box-shadow: var(--shadow-sm);
+            margin-top: 20px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .canva-wrapper iframe {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            border: none;
+        }
+
+        .canva-btn-container {
+            margin-top: 20px;
+            text-align: center;
         }
 
         .btn-canva {
-            display: inline-block;
-            background-color: #ffffff;
-            color: #7d2ae8;
-            font-weight: 700;
-            padding: 0.9rem 2rem;
-            border-radius: 30px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background-color: var(--canva-color);
+            color: #ffffff;
+            font-weight: 600;
+            padding: 12px 24px;
+            border-radius: 6px;
             text-decoration: none;
-            transition: transform 0.2s, box-shadow 0.2s;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transition: background-color 0.2s ease, transform 0.2s ease;
+            box-shadow: var(--shadow-sm);
+            font-size: 0.95rem;
         }
 
         .btn-canva:hover {
-            transform: scale(1.03);
-            box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+            background-color: var(--canva-hover);
+            transform: translateY(-2px);
         }
 
-        footer { background-color: var(--nav-bg); color: #94a3b8; text-align: center; padding: 2rem; margin-top: 5rem; font-size: 0.9rem; }
+        /* ==========================================================================
+           7. RODAPÉ
+           ========================================================================== */
+        footer {
+            text-align: center;
+            margin-top: 70px;
+            padding: 30px 20px;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        /* ==========================================================================
+           8. RESPONSIVIDADE
+           ========================================================================== */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.1rem;
+            }
+            .section-header h2 {
+                font-size: 1.75rem;
+            }
+            .intelectual-summary, .student-section {
+                padding: 25px 20px;
+            }
+            .student-section h3.sub-title {
+                font-size: 1.4rem;
+            }
+        }
     </style>
 </head>
 <body>
 
+    <!-- CABEÇALHO / TÍTULO PRINCIPAL -->
     <header>
-        <div class="nav-container">
-            <a href="index.html" class="logo">Portal <span>Intelectus</span></a>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Início</a></li>
-                    <li><a href="ensaios-estudantes.html">Ensaios & Artigos</a></li>
-                    <li><a href="design-canva.html" class="active">Projetos no Canva</a></li>
-                    <li><a href="projetos-multimedia.html">Multimídia & Pesquisa</a></li>
-                </ul>
-            </nav>
+        <div class="header-container">
+            <h1>O Pensamento Intelectual & As Produções Estudantis</h1>
+            <p class="subtitle">Uma jornada de reflexão crítica, busca pelo conhecimento e valorização do protagonismo escolar.</p>
         </div>
     </header>
 
-    <section class="banner">
-        <h1>Apresentações & Design Visual (Canva)</h1>
-        <p>Apresentações visuais, infográficos e mapas conceituais criados pelos estudantes para sintetizar a vida e obra dos intelectuais estudados.</p>
-    </section>
+    <main>
+
+        <!-- SEÇÃO PRINCIPAL: O QUE É SER INTELECTUAL -->
+        <section id="intelectualidade">
+            <div class="section-header">
+                <h2>O Que É Ser Intelectual?</h2>
+            </div>
+
+            <!-- RESUMO -->
+            <div class="intelectual-summary">
+                <p>
+                    Ser intelectual vai muito além do acúmulo de títulos acadêmicos ou do domínio de teorias complexas. Trata-se, em sua essência, de uma postura ética, curiosa e crítica perante o mundo. O verdadeiro intelectual é aquele que se recusa a aceitar verdades prontas, questiona as contradições sociais e busca compreender a realidade para transformá-la de forma justa e consciente.
+                </p>
+                <p>
+                    Inspirados por grandes pensadores como Paulo Freire e Hannah Arendt, entendemos que o exercício intelectual deve ser humanista e libertador. O conhecimento não serve para isolar o indivíduo em uma "torre de marfim", mas sim para construir pontes, estimular o diálogo e capacitar as novas gerações a pensarem por si mesmas. Ser intelectual é cultivar o hábito do questionamento rigoroso e colocar as ideias a serviço do bem comum.
+                </p>
+            </div>
+
+            <!-- GALERIA DE GRANDES INTELECTUAIS COM IMAGENS -->
+            <div class="intelectuals-grid">
+
+                <div class="intelectual-card">
+                    <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=600&q=80" alt="Hannah Arendt">
+                    <div class="intelectual-card-body">
+                        <h3>Hannah Arendt</h3>
+                        <span class="role">Filosofia & Política</span>
+                        <p>Pensadora fundamental sobre a liberdade, a responsabilidade cidadã e a defesa do pensamento crítico no espaço público.</p>
+                    </div>
+                </div>
+
+                <div class="intelectual-card">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80" alt="Paulo Freire">
+                    <div class="intelectual-card-body">
+                        <h3>Paulo Freire</h3>
+                        <span class="role">Educação Libertadora</span>
+                        <p>Patrono da educação brasileira, defensor da autonomia dos estudantes e da leitura crítica do mundo.</p>
+                    </div>
+                </div>
+
+                <div class="intelectual-card">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80" alt="Albert Einstein">
+                    <div class="intelectual-card-body">
+                        <h3>Albert Einstein</h3>
+                        <span class="role">Ciência & Humanismo</span>
+                        <p>Físico teórico cuja imaginação e rigor científico transformaram a nossa compreensão do universo e do tempo.</p>
+                    </div>
+                </div>
+
+                <div class="intelectual-card">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80" alt="Marie Curie">
+                    <div class="intelectual-card-body">
+                        <h3>Marie Curie</h3>
+                        <span class="role">Pioneirismo Científico</span>
+                        <p>Cientista pioneira no estudo da radioatividade e exemplo inigualável de dedicação à pesquisa e à inovação.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- SEÇÃO MURAL: PRODUÇÕES DOS ESTUDANTES (COM 3 TÍTULOS MENORES) -->
+        <section id="producoes-estudantes">
+            <div class="section-header">
+                <h2>Produções dos Nossos Estudantes</h2>
+            </div>
+
+            <!-- TÍTULO MENOR 1 -->
+            <div class="student-section">
+                <h3 class="sub-title">1. Projetos de Pesquisa e Investigação Científica</h3>
+                <p class="sub-desc">Projetos interdisciplinares desenvolvidos pelos estudantes com foco em análises acadêmicas e resolução de problemas da comunidade.</p>
+                
+                <div class="student-grid">
+                    <div class="work-card">
+                        <h4>A Influência da Informação Digital na Opinião Pública</h4>
+                        <p>Pesquisa elaborada pelas turmas do Ensino Médio analisando o impacto do pensamento crítico na checagem de fatos na internet.</p>
+                    </div>
+                    <div class="work-card">
+                        <h4>Inovação Ecológica e Cidades Sustentáveis</h4>
+                        <p>Mapeamento de soluções sustentáveis de baixo custo para reciclagem e economia de energia no ambiente escolar.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TÍTULO MENOR 2 (COM O EMBED E O LINK DO CANVA SOLICITADO) -->
+            <div class="student-section">
+                <h3 class="sub-title">2. Apresentações Visuais e Design Interativo (Canva)</h3>
+                <p class="sub-desc">Apresentação especial criada pelos alunos no Canva, integrando recursos visuais e sínteses conceituais do projeto.</p>
+                
+                <!-- VISUALIZADOR EMBUTIDO DO CANVA -->
+                <div class="canva-wrapper">
+                    <iframe loading="lazy" src="https://www.canva.com/design/DAHSr1cxs9k/fKudZBaTobf6ZrCYyHRCiQ/view?embed" allowfullscreen="allowfullscreen" allow="fullscreen"></iframe>
+                </div>
+
+                <!-- BOTÃO DE ACESSO DIRETO AO LINK SOLICITADO -->
+                <div class="canva-btn-container">
+                    <a href="https://www.canva.com/design/DAHSr1cxs9k/fKudZBaTobf6ZrCYyHRCiQ/edit" target="_blank" rel="noopener noreferrer" class="btn-canva">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 Aqui está o código completo do site, reunindo **HTML e CSS em um único arquivo**. 
+
+Para utilizá-lo, basta copiar o código abaixo, colar em um bloco de notas (ou editor de código como o VS Code) e salvar o arquivo com o nome **`index.html`**. Depois, é só dar dois cliques nele para abrir direto no seu navegador.
+
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O Papel do Intelectual e Produções Estudantis</title>
+    <!-- Fonte do Google Fonts -->
+    <link rel="preconnect" href="[https://fonts.googleapis.com](https://fonts.googleapis.com)">
+    <link rel="preconnect" href="[https://fonts.gstatic.com](https://fonts.gstatic.com)" crossorigin>
+    <link href="[https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,700;1,300&family=Poppins:wght@300;400;600&display=swap](https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,700;1,300&family=Poppins:wght@300;400;600&display=swap)" rel="stylesheet">
+    
+    <style>
+        /* --- ESTILOS CSS --- */
+        :root {
+            --primary-color: #1e293b;
+            --accent-color: #b45309;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-color: #334155;
+            --text-light: #64748b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #ffffff;
+            text-align: center;
+            padding: 60px 20px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-family: 'Merriweather', serif;
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            color: #f8fafc;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+            color: #cbd5e1;
+            font-weight: 300;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* --- SEÇÃO PRINCIPAL: O QUE É SER INTELECTUAL --- */
+        .intellectual-summary {
+            background-color: var(--card-bg);
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            margin-bottom: 50px;
+            border-left: 5px solid var(--accent-color);
+        }
+
+        .intellectual-summary h2 {
+            font-family: 'Merriweather', serif;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.8rem;
+        }
+
+        .intellectual-summary p {
+            font-size: 1.05rem;
+            color: var(--text-color);
+        }
+
+        .intellectuals-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 60px;
+        }
+
+        .intellectual-card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+        }
+
+        .intellectual-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        .intellectual-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .intellectual-card .card-content {
+            padding: 20px;
+        }
+
+        .intellectual-card h3 {
+            font-family: 'Merriweather', serif;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+
+        .intellectual-card span {
+            display: block;
+            font-size: 0.85rem;
+            color: var(--accent-color);
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .intellectual-card p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        /* --- SEÇÕES SECUNDÁRIAS: PRODUÇÕES DOS ESTUDANTES --- */
+        .section-title {
+            text-align: center;
+            font-family: 'Merriweather', serif;
+            font-size: 2.2rem;
+            color: var(--primary-color);
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent-color);
+            margin: 10px auto 0;
+        }
+
+        .student-productions {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .sub-section {
+            background-color: var(--card-bg);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        .sub-section h3 {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .sub-section h3::before {
+            content: '•';
+            color: var(--accent-color);
+            font-size: 2rem;
+        }
+
+        .canva-box {
+            background-color: #f1f5f9;
+            border: 2px dashed #cbd5e1;
+            padding: 25px;
+            border-radius: 8px;
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .canva-btn {
+            display: inline-block;
+            background-color: #00c4cc; /* Cor característica Canva */
+            color: white;
+            padding: 12px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 15px;
+            transition: background-color 0.3s ease;
+        }
+
+        .canva-btn:hover {
+            background-color: #00a3a8;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            background-color: var(--primary-color);
+            color: #94a3b8;
+            margin-top: 60px;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            header h1 { font-size: 2rem; }
+            .section-title { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- CABEÇALHO -->
+    <header>
+        <h1>O Papel do Intelectual e a Sociedade</h1>
+        <p>Uma reflexão sobre o pensamento crítico, o conhecimento e o protagonismo dos nossos estudantes.</p>
+    </header>
 
     <div class="container">
 
-        <!-- Destaque do Projeto Canva dos Estudantes -->
-        <div class="featured-canva-card">
-            <span class="badge-canva">🎨 Projeto Interativo em Destaque</span>
-            <h2 class="featured-title">Design Interativo: Os Grandes Intelectuais em Foco</h2>
-            <p class="featured-desc">
-                Este projeto foi desenvolvido colaborativamente pelos alunos no Canva. Ele reúne sínteses visuais, linhas do tempo e mapas mentais ilustrados sobre a contribuição teórica dos pensadores da humanidade.
+        <!-- RESUMO SOBRE O QUE É SER INTELECTUAL -->
+        <section class="intellectual-summary">
+            <h2>O que é ser um Intelectual?</h2>
+            <p>
+                Ser intelectual vai muito além do acúmulo de diplomas ou da erudição acadêmica. O verdadeiro intelectual é aquele que utiliza a razão, a criatividade e a análise crítica para questionar as certezas postas, compreender as complexidades da sociedade e propor caminhos de transformação. É alguém comprometido com a busca constante da verdade, da justiça e com o desenvolvimento do bem comum através do conhecimento.
             </p>
+        </section>
 
-            <div class="canva-link-box">
-                <h3>Acesse a Apresentação no Canva</h3>
-                <p>Clique no botão abaixo para abrir a edição e visualização completa do design interativo diretamente na plataforma Canva:</p>
-                <a href="https://www.canva.com/design/DAHSr1cxs9k/fKudZBaTobf6ZrCYyHRCiQ/edit" target="_blank" rel="noopener noreferrer" class="btn-canva">
-                    🔗 Abrir Design no Canva
-                </a>
+        <!-- CARDS DOS GRANDES INTELECTUAIS -->
+        <section class="intellectuals-grid">
+            <div class="intellectual-card">
+                <img src="[https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&q=80&w=600](https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&q=80&w=600)" alt="Estátua de Filósofo">
+                <div class="card-content">
+                    <h3>Sócrates</h3>
+                    <span>Filosofia Clássica</span>
+                    <p>"Uma vida não examinada não vale a pena ser vivida." Pioneiro na busca pelo autoconhecimento e questionamento crítico.</p>
+                </div>
             </div>
+
+            <div class="intellectual-card">
+                <img src="[https://images.unsplash.com/photo-1532012197267-da84d127e765?auto=format&fit=crop&q=80&w=600](https://images.unsplash.com/photo-1532012197267-da84d127e765?auto=format&fit=crop&q=80&w=600)" alt="Livro e Conhecimento">
+                <div class="card-content">
+                    <h3>Hannah Arendt</h3>
+                    <span>Teoria Política</span>
+                    <p>Dedicou sua vida a pensar a liberdade, a responsabilidade individual e o perigo do pensamento autômato.</p>
+                </div>
+            </div>
+
+            <div class="intellectual-card">
+                <img src="[https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&q=80&w=600](https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&q=80&w=600)" alt="Biblioteca">
+                <div class="card-content">
+                    <h3>Paulo Freire</h3>
+                    <span>Educação Crítica</span>
+                    <p>Defendeu a educação como prática da liberdade e o papel do estudante como sujeito ativo do seu aprendizado.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO DAS PRODUÇÕES DOS ESTUDANTES -->
+        <h2 class="section-title">Produções dos Estudantes</h2>
+
+        <div class="student-productions">
+
+            <!-- SUBTÍTULO 1 -->
+            <article class="sub-section">
+                <h3>1. Ensaios Cíticos e Artigos Acadêmicos</h3>
+                <p>
+                    Nesta seção, reunimos as produções textuais desenvolvidas pelos estudantes ao longo do período letivo. Os textos abordam temas contemporâneos, ética, filosofia e os impactos da tecnologia na sociedade moderna.
+                </p>
+            </article>
+
+            <!-- SUBTÍTULO 2 (COM O LINK DO CANVA) -->
+            <article class="sub-section">
+                <h3>2. Apresentação Interativa e Design de Ideias</h3>
+                <p>
+                    Abaixo você pode acessar o material visual e interativo elaborado pela turma para sintetizar os conceitos estudados.
+                </p>
+                <div class="canva-box">
+                    <h4>Design do Projeto no Canva</h4>
+                    <p>Acesse o projeto completo interativo diretamente na plataforma Canva:</p>
+                    <a href="[https://www.canva.com/design/DAHSr1cxs9k/fKudZBaTobf6ZrCYyHRCiQ/edit](https://www.canva.com/design/DAHSr1cxs9k/fKudZBaTobf6ZrCYyHRCiQ/edit)" target="_blank" rel="noopener noreferrer" class="canva-btn">
+                        🎨 Abrir Apresentação no Canva
+                    </a>
+                </div>
+            </article>
+
+            <!-- SUBTÍTULO 3 -->
+            <article class="sub-section">
+                <h3>3. Projetos Multimídia e Debates</h3>
+                <p>
+                    Coletânea de pesquisas em áudio, episódios de podcasts, registros em vídeo e relatórios de debates promovidos em sala de aula, onde a teoria foi colocada em diálogo com a realidade.
+                </p>
+            </article>
+
         </div>
 
     </div>
 
+    <!-- RODAPÉ -->
     <footer>
-        <p>&copy; 2026 Portal Intelectus - Integração com Projetos Visuais dos Estudantes</p>
+        <p>&copy; 2026 - Portal de Projetos Estudantis | Construindo o pensamento crítico.</p>
     </footer>
 
 </body>
